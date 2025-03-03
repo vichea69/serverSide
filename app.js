@@ -9,7 +9,14 @@ const app = express();
 
 // Middleware
 app.use(express.json()); // Parse incoming JSON requests
-app.use(cors());
+app.use(
+    cors({
+        origin: " http://localhost:5173/", // Replace with your frontend URL in production
+        methods: "GET,POST,PUT,DELETE",
+        allowedHeaders: "Content-Type,Authorization",
+    })
+);
+
 
 // Serve static files (images)
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
