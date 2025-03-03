@@ -1,0 +1,8 @@
+db.getUsers()
+use admin
+show dbs
+mongosh -u root -p example --authenticationDatabase admin
+clear
+mongosh -u root -p example --authenticationDatabase admin
+mongosh -u root -p example --authenticationDatabase root
+show dbs
